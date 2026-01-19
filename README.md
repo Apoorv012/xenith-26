@@ -45,6 +45,34 @@ git push origin feature/<your-page>
    git checkout feature/<your-page>
    git merge main
    ```
-   
+
+---
+## Workflow for a Developer
+1) Make sure branch is up-to-date with main
+Before pushing, always sync with main to avoid conflicts:
+```bash
+# Switch to main branch
+git checkout main
+
+# Pull latest changes from remote
+git pull origin main
+
+# Switch back to feature branch
+git checkout feature/events
+
+# Merge latest main into your branch
+git merge main
+```
+2) Stage and commit the changes
+   ```bash
+   git add .
+   git commit -m "describe"
+   ```
+3) Push the feature branch to GitHub
+   ```bash
+   git push -u origin feature/events
+   ```
+4) Open a Pull Request (PR) on GitHub
+   Go to the repository on GitHub, Click Compare & pull request for feature/yourpage, Set the base branch = main, compare branch = feature/yourpage, Add a title + description, Click Create Pull Request
 
 

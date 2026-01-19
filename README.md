@@ -31,5 +31,20 @@ git add .
 git commit -m "Describe your changes"
 git push origin feature/<your-page>
 ```
+---
+## Contribution Rules
+1) Never push directly to main. Always create a feature branch.
+2) Work only in your assigned page folder.
+3) Use index.css for global fonts, colors, and resets. Page-specific styling goes in your page’s CSS.
+4) Reusable components (buttons, cards, sliders) go in components/.
+5) Open a Pull Request (PR) to merge your branch into main.
+6) After merging, always pull latest changes from main before starting new work:
+   ```bash
+   git checkout main
+   git pull origin main
+   git checkout feature/<your-page>
+   git merge main
+   ```
+   
 
 

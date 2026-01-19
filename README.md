@@ -8,7 +8,7 @@ Follow these steps to run the project locally:
 
 ### Clone the repository
 ```bash
-git clone https://github.com/khushimittal20/xenith-2026.git
+git clone https://github.com/khushimittal20/xenith-26.git
 cd xenith-26
 npm install
 npm run dev

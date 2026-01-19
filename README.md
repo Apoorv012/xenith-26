@@ -9,7 +9,7 @@ Follow these steps to run the project locally:
 ### Clone the repository
 ```bash
 git clone https://github.com/khushimittal20/xenith-2026.git
-cd xenith-2026
+cd xenith-26
 npm install
 npm run dev
 ```

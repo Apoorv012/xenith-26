@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
+.contact-page {
+    min-height: 100vh;
+    background-image: url("/contacts-page-bg.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    padding-top: 40px;
+    font-family: 'Metal Mania', serif;
+}
+
+.contact-page.input-active {
+    transition: filter 0.3s ease;
+}
+
+.contact-page.input-active::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    background: rgba(0,0,0,0.4);
+    z-index: 5;
+    transition: all 0.3s ease;
+}
+
+.contact-page .container {
+    display: flex;
+    position: relative;
+    z-index: 10;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    min-height: 100vh;
+}
+
+.contact-page .left-half {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.contact-page .contact-text {
+    font-size: 1.5rem;
+    text-align: center;
+    background: rgba(0,0,0,0.5);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 80%;
+    backdrop-filter: blur(10px);
+}
+
+.contact-page .right-half {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    z-index: 25;
+}
+
+.contact-page .form-container {
+    font-size: 1.5rem;
+    text-align: center;
+    background: rgba(0,0,0,0.5);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 20;
+}
+
+.contact-page h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ffe8e6;
+}
+
+.contact-page label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.contact-page input,
+.contact-page textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.9);
+    font-size: 1rem;
+    transition: box-shadow 0.3s ease;
+    color: #000;
+}
+
+.contact-page input:focus,
+.contact-page textarea:focus {
+    outline: none;
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
+}
+
+.contact-page button {
+    width: 100%;
+    padding: 1rem;
+    background: #c73d2e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-page button:hover:not(:disabled) {
+    background: #e04a38;
+}
+
+.contact-page button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    animation: buttonPulse 1.5s infinite;
+}
+
+.contact-page .contact-info {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-page .container {
+        flex-direction: column;
+        padding-top: 10px;
+        padding-bottom: 2rem;
+        min-height: auto;
+    }
+
+    .contact-page .left-half,
+    .contact-page .right-half {
+        width: 100%;
+    }
+}
+
+.success-animation,
+.error-animation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(25px);
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    z-index: 10000;
+}
+
+.error-animation .error-circle {
+    width: 80px;
+    height: 80px;
+    border: 6px solid #f87171;
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: errorShake 0.6s ease-in-out;
+}
+
+@keyframes errorShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    75% { transform: translateX(8px); }
+}
+
+.contact-page .spinner {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+@keyframes buttonPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}

@@ -8,6 +8,7 @@ import Events from "./pages/Events/Events";
 import Gallery from "./pages/Gallery/Gallery";
 import Team from "./pages/Team/Team";
 import Contact from "./pages/Contact/Contact";
+import NavPage from "./pages/NavPage/NavPage";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       { path: "/gallery", element: <Gallery /> },
       { path: "/team", element: <Team /> },
       { path: "/contact", element: <Contact /> },
+      { path: "/nav", element: <NavPage /> },
     ],
   },
 ]);

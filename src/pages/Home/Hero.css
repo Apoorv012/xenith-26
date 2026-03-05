@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:wght@300;400&display=swap');
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh; /* overrides on browsers that support it */
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  
+  /* width: 100%;
+  height: 100%; */
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  transform: translate(-50%, -50%);
+}
+
+.header {
+  text-align: center;
+  will-change: opacity;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0;
+}
+
+.hero-title {
+  font-family: "Cinzel", serif;
+  font-size: clamp(2.2rem, 6vw, 6rem);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #F5C87A;
+  text-shadow:
+    0 0 40px rgba(245, 165, 50, 0.4),
+    0 4px 24px rgba(80, 20, 0, 0.6);
+  line-height: 1.05;
+}
+
+.hero-subtitle {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(0.85rem, 2vw, 1.4rem);
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #E8D5B0;
+  text-shadow: 0 2px 12px rgba(80, 20, 0, 0.5);
+}
+
+.header::after {
+  content: "⸻";
+  color: #C8860A;
+  font-size: 1rem;
+  opacity: 0.7;
+  order: 1; /* sits between title and subtitle */
+}
+
+.hero-subtitle {
+  order: 2;
+}
+
+/*
+@media (max-width: 768px) {
+  .hero-title {
+    letter-spacing: 0.1em;
+  }
+  .hero-subtitle {
+    letter-spacing: 0.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: clamp(1.6rem, 7vw, 2.5rem);
+    letter-spacing: 0.06em;
+  }
+  .hero-subtitle {
+    font-size: clamp(0.65rem, 3vw, 0.9rem);
+    letter-spacing: 0.12em;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-title {
+    font-size: clamp(1.2rem, 4vw, 2rem);
+  }
+  .hero-subtitle {
+    font-size: clamp(0.6rem, 2vw, 0.85rem);
+  }
+}
+  */

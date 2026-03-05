@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:wght@300;400&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Cinzel", serif;
+  background: #0f0f0f;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* h1 {
+  font-family: "Cinzel", serif;
+  font-size: 4rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+} */
+/* Discover header */
+.spotlight-header p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(0.85rem, 2vw, 1.4rem);
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #E8D5B0;
+  text-shadow: 0 2px 12px rgba(80, 20, 0, 0.5);
+}
+p {
+  font-size: 1.5rem;
+}
+
+/* ===== SPOTLIGHT SECTION ===== */
+
+.spotlight {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #0f0f0f;
+}
+
+/* Background image */
+.spotlight-bg-img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+/* Titles container — clipped to diamond/chevron shape */
+.spotlight-titles-container {
+  position: absolute;
+  top: 0;
+  left: 15vw;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+  clip-path: polygon(
+    50svh 0px,
+    0px 50%,
+    50svh 100%,
+    100% calc(100% + 100svh),
+    100% -100svh
+  );
+  --before-opacity: 0;
+  --after-opacity: 0;
+}
+
+/* Diagonal cut lines */
+.spotlight-titles-container::before,
+.spotlight-titles-container::after {
+  content: "";
+  position: absolute;
+  width: 100svh;
+  height: 2.5px;
+  background: #fff;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+.spotlight-titles-container::before {
+  top: 0;
+  left: 0;
+  transform: rotate(-45deg) translate(-7rem);
+  opacity: var(--before-opacity);
+}
+
+.spotlight-titles-container::after {
+  bottom: 0;
+  left: 0;
+  transform: rotate(45deg) translate(-7rem);
+  opacity: var(--after-opacity);
+}
+
+/* Titles list */
+.spotlight-titles {
+  position: relative;
+  left: 12%;
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  z-index: 2;
+}
+
+/* .spotlight-titles h1 {
+  color: #fff;
+  font-size: 3.2rem;
+  letter-spacing: 0.18em;
+  opacity: 0.25;
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+} */
+ /* Nav titles */
+.spotlight-titles h1 {
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.3rem, 3.2vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #F5C87A;
+  text-shadow:
+    0 0 40px rgba(245, 165, 50, 0.3),
+    0 4px 24px rgba(80, 20, 0, 0.5);
+  opacity: 0.25; 
+}
+
+/* Images container */
+.spotlight-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  min-width: 300px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.spotlight-img {
+  position: absolute;
+  width: 200px;
+  height: 150px;
+  opacity: 0;
+  will-change: transform;
+}
+
+.spotlight-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Discover header */
+.spotlight-header {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: #fff;
+  z-index: 3;
+}
+.spotlight-bg-img img {
+  filter: blur(5px);
+  transform: scale(1.05);
+}
+.spotlight-img {
+  position: absolute;
+  width: 200px;
+  height: 150px;
+  opacity: 0;
+  will-change: transform;
+  filter: drop-shadow(0 8px 24px rgba(255, 255, 255, 0.15))
+          drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
+}
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1024px) {
+  .spotlight-titles h1 {
+    font-size: 2.4rem;
+    letter-spacing: 0.12em;
+  }
+
+  .spotlight-titles {
+    left: 10%;
+    width: 85%;
+    gap: 3.5rem;
+  }
+
+  .spotlight-header {
+    left: 6%;
+  }
+}
+
+@media (max-width: 768px) {
+  .spotlight-titles h1 {
+    font-size: 1.8rem;
+    letter-spacing: 0.08em;
+  }
+
+  .spotlight-titles {
+    left: 5%;
+    width: 90%;
+    gap: 2.5rem;
+  }
+
+  .spotlight-header {
+    left: 4%;
+  }
+
+  .spotlight-header p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .spotlight-titles h1 {
+    font-size: 1.3rem;
+    letter-spacing: 0.06em;
+  }
+
+  .spotlight-titles {
+    gap: 2rem;
+  }
+}
+
+
+
+

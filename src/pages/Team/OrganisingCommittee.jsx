@@ -421,31 +421,27 @@ export default function OrganisingCommittee() {
         }
 
         /* ── Nav arrows — FIXED to page, always visible above everything ── */
-        .nav-arrow {
-          position: fixed;
-          top: 50%; z-index: 200;
-          transform: translateY(-50%);
-          width: 54px; height: 54px;
-          border-radius: 50%;
-          display: flex; align-items: center; justify-content: center;
-          cursor: pointer; outline: none;
-          background: rgba(0,0,0,0.6);
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
-          border: 1.5px solid rgba(255,255,255,0.12);
-          color: rgba(255,255,255,0.6);
-          transition: all 0.25s ease;
-          box-shadow: 0 4px 28px rgba(0,0,0,0.7);
-        }
-        .nav-arrow:hover {
-          border-color: #ff7a18;
-          background: linear-gradient(135deg, rgba(255,122,24,0.35), rgba(255,179,71,0.15));
-          color: #ffb347;
-          box-shadow: 0 0 32px rgba(255,122,24,0.45), 0 8px 32px rgba(0,0,0,0.6);
-        }
-        .nav-arrow.left  { left: 28px; }
-        .nav-arrow.right { right: 28px; }
-
+      .nav-arrow {
+            position: fixed;
+            top: 50%; z-index: 200;
+            transform: translateY(-50%);
+            width: 70px; height: 70px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; outline: none;
+            background: rgba(0,0,0,0.4);
+            border: 2px solid rgba(255,255,255,0.4);
+            color: white;
+            font-family: 'TeamFont', sans-serif;
+            font-size: 28px;
+            transition: all 0.3s ease;
+          }
+          .nav-arrow:hover {
+            transform: translateY(-50%) scale(1.1);
+            border-color: white;
+          }
+          .nav-arrow.left  { left: 28px; }
+          .nav-arrow.right { right: 28px; }
         /* ── Footer ── */
         .oc-footer {
           margin-top: 28px;
@@ -554,17 +550,11 @@ export default function OrganisingCommittee() {
       ))}
 
       {/* Nav arrows — fixed to page, z-index 200, always on top */}
-      <button className="nav-arrow left"  onClick={slidePrev} aria-label="Previous">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="15 18 9 12 15 6" />
-        </svg>
+     <button className="nav-arrow left" onClick={slidePrev} aria-label="Previous">
+        ⛩
       </button>
       <button className="nav-arrow right" onClick={slideNext} aria-label="Next">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="9 18 15 12 9 6" />
-        </svg>
+        ⛩
       </button>
 
       <div className="oc-page" ref={sectionRef}>

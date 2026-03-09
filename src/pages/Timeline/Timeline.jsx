@@ -1,16 +1,8 @@
 // export default function Timeline() {
 //   return <h1>Timeline</h1>;
 // }
-import CherryBlossam from "./CherryBlossam";
-import Fishingpx from "./Fishingpx";
-import Time2 from "./Time2";
+import TimelinePage from "./Timeline1";
 
 export default function Timeline() {
-  return (
-    <>
-      <CherryBlossam />
-      <Fishingpx />
-      <Time2 />
-    </>
-  );
+  return <TimelinePage />;
 }

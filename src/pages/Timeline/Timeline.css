@@ -1,0 +1,153 @@
+
+
+.timeline-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+
+
+.koi-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  opacity: 0.85;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.water-wave {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+
+.water-wave canvas {
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0.6;
+}
+
+
+
+.timeline-page {
+  position: relative;
+  min-height: 250vh;
+  z-index: 1;
+  background-color: transparent;
+  margin-top: 0;
+}
+
+
+
+.screen-wash {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 170, 190, 0.22),
+    rgba(255, 190, 210, 0.15),
+    rgba(255, 170, 190, 0.22)
+  );
+  opacity: 0;
+}
+
+
+
+.parallax-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+}
+
+
+.timeline-scroll {
+  position: relative;
+  height: 100vh;
+}
+.water-wave span {
+  display: block;
+  height: 0;
+}
+.timeline-sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+.timeline-mask-text {
+  font-size: clamp(4rem, 10vw, 8rem);
+  color: #ffe6e6;
+  letter-spacing: 1.5rem;
+  opacity: 0.5;
+}
+
+
+
+.timeline-content {
+  position: relative;
+  z-index: 10;
+  padding: 5% 10%;
+  min-height: 100vh;
+  color: #e4e4e4;
+}
+
+
+
+.CherryBlossomOverlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+
+@media (max-width: 768px) {
+  .timeline-content {
+    padding: 5% 5%;
+  }
+  
+  .timeline-mask-text {
+    letter-spacing: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-mask-text {
+    letter-spacing: 0.4rem;
+  }
+}
+
+.screen-wash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(0px); 
+  pointer-events: none;       
+  transition: backdrop-filter 0.3s ease-out; 
+  z-index: 1;
+}

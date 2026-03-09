@@ -3,7 +3,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  border-bottom: 1px solid #222;
+  border-bottom: 0px solid #222;
+   position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo {

@@ -1,7 +1,7 @@
 import "./About.css";
-import bgImage from "../../assets/about-bg.png";
+import bgImage from "../../assets1/about-bg.png";
 import { useEffect } from "react";
-import lanternImage from "../../assets/lantern.png";
+import lanternImage from "../../assets1/lantern.png";
 
 
 export default function About() {

@@ -1,6 +1,3 @@
-// export default function About() {
-//   return <h1>About</h1>;
-// }
 import "./About.css";
 import bgImage from "../../assets/about-bg.png";
 import { useEffect } from "react";

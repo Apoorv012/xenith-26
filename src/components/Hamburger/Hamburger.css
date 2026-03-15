@@ -1,39 +1,125 @@
+/* ========================================
+   HAMBURGER MENU - ENHANCED
+   Samurai-themed navigation toggle
+   ======================================== */
+
 .hamburger {
   position: fixed;
   top: 1.5rem;
   right: 1.5rem;
-  z-index: 1000;
+  z-index: var(--z-fixed);
+  
   background: transparent;
   border: none;
   cursor: pointer;
+  
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding: 8px;
+  padding: 12px;
+  
+  transition: var(--transition-base);
+  will-change: transform;
 }
 
+.hamburger:hover {
+  transform: scale(1.1);
+}
+
+/* Hamburger lines */
 .hamburger span {
   display: block;
-  height: 2px;
-  background: #f5c87a;
-  border-radius: 2px;
+  height: 2.5px;
+  background: var(--color-gold-primary);
+  border-radius: 3px;
+  
   transform-origin: center;
-  transition: transform 0.4s ease, opacity 0.3s ease, width 0.3s ease;
+  transition: 
+    transform var(--transition-slow) ease,
+    opacity var(--transition-base) ease,
+    width var(--transition-base) ease,
+    background var(--transition-base) ease;
+  
+  box-shadow: var(--shadow-gold-sm);
 }
 
-.hamburger span:nth-child(1) { width: 32px; }
-.hamburger span:nth-child(2) { width: 22px; }
-.hamburger span:nth-child(3) { width: 28px; }
+.hamburger span:nth-child(1) { 
+  width: 32px;
+}
 
-/* Open state — transforms to X */
+.hamburger span:nth-child(2) { 
+  width: 22px;
+}
+
+.hamburger span:nth-child(3) { 
+  width: 28px;
+}
+
+/* Hamburger hover state - add glow */
+.hamburger:hover span {
+  background: var(--color-gold-secondary);
+  box-shadow: 0 0 12px rgba(245, 200, 120, 0.5);
+}
+
+/* ========================================
+   OPEN STATE - Transform to X
+   ======================================== */
+
 .hamburger--open span:nth-child(1) {
   width: 30px;
   transform: translateY(8px) rotate(45deg);
 }
+
 .hamburger--open span:nth-child(2) {
   opacity: 0;
+  transform: scale(0);
 }
+
 .hamburger--open span:nth-child(3) {
   width: 30px;
   transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .hamburger {
+    top: 1rem;
+    right: 1rem;
+    gap: 5px;
+    padding: 10px;
+  }
+  
+  .hamburger span {
+    height: 2px;
+  }
+  
+  .hamburger span:nth-child(1) { 
+    width: 28px;
+  }
+  
+  .hamburger span:nth-child(2) { 
+    width: 20px;
+  }
+  
+  .hamburger span:nth-child(3) { 
+    width: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hamburger {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+}
+
+/* ========================================
+   ACTIVE STATE ANIMATIONS
+   ======================================== */
+
+.hamburger:active span {
+  box-shadow: 0 0 20px rgba(245, 165, 50, 0.6);
 }

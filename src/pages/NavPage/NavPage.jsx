@@ -20,9 +20,9 @@ export default function NavPage() {
   const spotlightItems = [
   { name: "Home", img: "/images-nav/img_1.jpg", path: "/" },
   { name: "Events", img: "/images-nav/img_2.jpg", path: "/events" },
-  { name: "Timeline", img: "/images-nav/img_3.jpg", path: "/timeline" },
-  { name: "About", img: "/images-nav/img_4.jpg", path: "/about" },
-  { name: "Gallery", img: "/images-nav/img_5.jpg", path: "/gallery" },
+  { name: "Timeline", img: "/images-nav/img_3.png", path: "/timeline" },
+  { name: "About", img: "/images-nav/img_4.png", path: "/about" },
+  { name: "Gallery", img: "/images-nav/img_5.png", path: "/gallery" },
   { name: "Team", img: "/images-nav/img_6.jpg", path: "/team" },
   { name: "Contact", img: "/images-nav/img_7.jpg", path: "/contact" },
 ];

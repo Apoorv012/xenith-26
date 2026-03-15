@@ -1,0 +1,333 @@
+/* ========================================
+   SHADOWS OF SAMURAI - ANIMATIONS LIBRARY
+   Reusable animations for consistent motion
+   ======================================== */
+
+/* ========================================
+   PAGE TRANSITIONS
+   ======================================== */
+
+/* Fade in on page load */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide in from top */
+@keyframes slideInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide in from bottom */
+@keyframes slideInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide in from left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale in */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========================================
+   TEXT ANIMATIONS
+   ======================================== */
+
+/* Text reveal - gold glow */
+@keyframes textRevealGold {
+  from {
+    opacity: 0;
+    color: var(--color-bg-darker);
+    text-shadow: none;
+  }
+  to {
+    opacity: 1;
+    color: var(--color-gold-primary);
+    text-shadow: var(--shadow-text-gold);
+  }
+}
+
+/* Text shimmer effect */
+@keyframes textShimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Glow pulse */
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: var(--shadow-text-gold);
+  }
+  50% {
+    text-shadow: var(--shadow-text-gold), 0 0 60px rgba(245, 165, 50, 0.6);
+  }
+}
+
+/* Underline reveal */
+@keyframes underlineReveal {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* ========================================
+   HOVER & INTERACTIVE ANIMATIONS
+   ======================================== */
+
+/* Hover scale + glow */
+@keyframes hoverScale {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+/* Hover lift */
+@keyframes hoverLift {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Hover glow */
+@keyframes hoverGlow {
+  0% {
+    box-shadow: var(--shadow-gold-md);
+  }
+  100% {
+    box-shadow: var(--shadow-gold-lg);
+  }
+}
+
+/* ========================================
+   DECORATIVE ANIMATIONS
+   ======================================== */
+
+/* Floating effect */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Rotate subtle */
+@keyframes rotateSoft {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Glow border pulse */
+@keyframes borderGlow {
+  0%, 100% {
+    border-color: rgba(245, 200, 120, 0.1);
+    box-shadow: 0 0 10px rgba(245, 165, 50, 0.1);
+  }
+  50% {
+    border-color: rgba(245, 200, 120, 0.3);
+    box-shadow: 0 0 25px rgba(245, 165, 50, 0.3);
+  }
+}
+
+/* ========================================
+   PARTICLE & EFFECT ANIMATIONS
+   ======================================== */
+
+/* Fade in and out */
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Stagger fade (use with animation-delay) */
+@keyframes staggerFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Bounce in */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ========================================
+   SCROLL-TRIGGERED ANIMATIONS
+   ======================================== */
+
+/* Fade in on scroll */
+@keyframes scrollFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Parallax text */
+@keyframes parallaxUp {
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   ANIMATION UTILITY CLASSES
+   ======================================== */
+
+/* Apply fade in */
+.animate-fadeIn {
+  animation: fadeIn var(--transition-slower) ease forwards;
+}
+
+/* Apply slide in from top */
+.animate-slideInTop {
+  animation: slideInTop var(--transition-slow) ease forwards;
+}
+
+/* Apply slide in from bottom */
+.animate-slideInBottom {
+  animation: slideInBottom var(--transition-slow) ease forwards;
+}
+
+/* Apply scale in */
+.animate-scaleIn {
+  animation: scaleIn var(--transition-slow) ease forwards;
+}
+
+/* Apply text reveal */
+.animate-textReveal {
+  animation: textRevealGold var(--transition-slow) ease forwards;
+}
+
+/* Apply glow pulse */
+.animate-glowPulse {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* Apply float */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Apply hover effect */
+.animate-onHover:hover {
+  animation: hoverLift var(--transition-base) ease forwards;
+}
+
+/* ========================================
+   STAGGERED ANIMATIONS
+   (Use with nth-child + animation-delay)
+   ======================================== */
+
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+.stagger-7 { animation-delay: 0.7s; }
+.stagger-8 { animation-delay: 0.8s; }
+
+/* ========================================
+   REDUCED MOTION SUPPORT
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:wght@300;400&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:wght@300;400&display=swap");
 
 *, *::before, *::after {
   margin: 0;
@@ -38,3 +38,94 @@ button {
 ul, ol {
   list-style: none;
 }
+
+
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("./assets1/fonts/RiiCookieLt.otf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("./assets1/fonts/Sukajan.otf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+} */
+ /* ========================================
+   SHADOWS OF SAMURAI - MASTER INDEX
+   Central import point for all styling
+   ======================================== */
+
+/* IMPORTANT: All @import statements MUST come FIRST, before @font-face */
+
+/* 1. IMPORT GOOGLE FONTS FIRST */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:wght@300;400&display=swap");
+
+/* 2. IMPORT THEME SYSTEM */
+@import url("./styles/theme.css");
+
+/* 3. IMPORT ANIMATIONS */
+@import url("./styles/animations.css");
+
+/* ========================================
+   CUSTOM LOCAL FONTS (AFTER all @imports)
+   ======================================== */
+
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("./assets1/fonts/RiiCookieLt.otf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("./assets1/fonts/Sukajan.otf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ========================================
+   PAGE-SPECIFIC CSS FILES
+   These are imported directly in JSX files,
+   which is perfectly fine! They'll inherit
+   all the theme variables from theme.css
+   
+   Pages using their own CSS:
+   - Hero.jsx → Hero.css
+   - NavPage.jsx → NavPage.css
+   - About.jsx → About.css
+   - etc.
+   ======================================== */
+
+/* ========================================
+   OPTIONAL: ADDITIONAL GLOBAL STYLES
+   Add custom styles here that don't fit
+   in theme.css or your page-specific CSS
+   ======================================== */
+
+/* Example: Custom scrollbar */
+/* ::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-darker);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold-primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-secondary);
+}
+
+
+* {
+  scrollbar-color: var(--color-gold-primary) var(--color-bg-darker);
+  scrollbar-width: thin;
+} */

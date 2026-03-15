@@ -128,7 +128,19 @@ export default function Hero() {
       <canvas ref={canvasRef} />
       <div className="hero-content">
         <div className="header" ref={headerRef}>
-          <h1 className="hero-title">Shadows of Samurai</h1>
+          {/* <h1 className="hero-title">Shadows of Samurai</h1> */}
+          <h1 className="hero-title">
+  {/* {["S", "h", "a", "d", "o", "w", "s", " ", "o", "f", " ", "S", "a", "m", "u", "r", "a", "i"].map((char, i) => ( */}
+  {["S", "h", "a", "d", "o", "w", "s", "\u00A0", "o", "f", "\u00A0", "S", "a", "m", "u", "r", "a", "i"].map((char, i) => (
+    <span 
+      key={i} 
+      className="char-glow"
+      style={{ animationDelay: `${i * 0.1}s` }}
+    >
+      {char}
+    </span>
+  ))}
+</h1>
           <p className="hero-subtitle">IEEE JIIT's Technical Odyssey</p>
         </div>
       </div>

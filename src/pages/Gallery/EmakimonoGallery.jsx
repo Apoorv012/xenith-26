@@ -873,7 +873,7 @@ function ImagePanel({ panel, inView }) {
         }}>
           {panel.number}
         </p>
-        <h2 style={{
+        {/* <h2 style={{
           fontFamily: "'Cormorant Garamond', serif",
           fontWeight: 300,
           fontSize: "clamp(1.9rem, 3.0vw, 3.0rem)",
@@ -881,12 +881,23 @@ function ImagePanel({ panel, inView }) {
           lineHeight: 1.12,
           letterSpacing: "0.02em",
           marginBottom: "0.8rem",
+        }}> */}
+        <h2 style={{
+          fontFamily: "MyCustomFont",  /* Changed to MyCustomFont */
+          fontWeight: 700,  /* Bold version */
+          fontSize: "clamp(1.9rem, 3.0vw, 3.0rem)",
+          color: "#e2c27a",  /* Changed to golden */
+          lineHeight: 1.12,
+          letterSpacing: "0.02em",
+          marginBottom: "0.8rem",
+          textShadow: "0 0 20px rgba(226, 194, 122, 0.3), 0 2px 12px rgba(80, 20, 0, 0.2)",  /* Added glow */
         }}>
           {panel.title.map((line, i) => (
             <span key={i} style={{
               display: "block",
               fontStyle: i === panel.titleItalic ? "italic" : "normal",
-              color: i === panel.titleItalic ? "#e2c27a" : "#c8b99a",
+              //color: i === panel.titleItalic ? "#e2c27a" : "#c8b99a",
+              color: i === panel.titleItalic ? "#fff" : "#e2c27a",  /* Swap colors - italic becomes white */
             }}>
               {line}
             </span>
@@ -1070,7 +1081,7 @@ export default function EmakimonoGallery() {
             fontFamily: "'Cormorant Garamond', serif",
             fontWeight: 300, fontStyle: "italic", fontSize: "1.5rem",
             color: "#c8b99a", letterSpacing: "0.15em",
-          }}>Emakimono</span>
+          }}></span>
         </div>
         <div style={{
           fontFamily: "'Cormorant Garamond', serif",
@@ -1141,7 +1152,7 @@ export default function EmakimonoGallery() {
                 background: "linear-gradient(90deg, transparent, #b8935a, transparent)",
                 margin: "0 auto 2rem",
               }} />
-              <h1 style={{
+              {/* <h1 style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontWeight: 300,
                 fontSize: "clamp(4rem, 8vw, 8rem)",
@@ -1149,9 +1160,31 @@ export default function EmakimonoGallery() {
                 lineHeight: 0.92,
                 letterSpacing: "-0.01em",
                 marginBottom: "2.5rem",
-              }}>
+              }}> */}
+              <h1 style={{
+                  fontFamily: "MyCustomFont",  /* Changed to MyCustomFont */
+                  fontWeight: 700,  /* Bold version */
+                  fontSize: "clamp(4rem, 8vw, 8rem)",
+                  color: "#e2c27a",  /* Changed to golden */
+                  lineHeight: 0.92,
+                  letterSpacing: "-0.01em",
+                  marginBottom: "2.5rem",
+                  textShadow: "0 0 30px rgba(226, 194, 122, 0.4), 0 4px 16px rgba(80, 20, 0, 0.3)",  /* Added glow */
+                }}>
                 IEEE
-                <span style={{ display: "block", fontStyle: "italic", color: "#e2c27a" }}>Gallery '26</span>
+                {/* <span style={{ display: "block", fontStyle: "italic", color: "#e2c27a" }}>Gallery '26</span> */}
+                <span style={{ 
+                display: "block", 
+                fontStyle: "italic", 
+                color: "#e2c27a",
+                textShadow: "0 0 20px rgba(226, 194, 122, 0.3)",
+                fontSize: "clamp(3.2rem, 6.5vw, 6.5rem)",
+                fontWeight: 700,
+                letterSpacing: "0.02em",
+              }}>
+                <span style={{ fontFamily: "MyCustomFont" }}>Gallery</span>
+                <span style={{ fontFamily: "'Cormorant Garamond', serif" }}> '26</span>
+              </span>
               </h1>
               <div style={{
                 width: 60, height: 1,

@@ -54,7 +54,7 @@ const Time2 = () => {
     "Code without seeing, debug without certainty—welcome to controlled chaos. BlindCoding ignites the stage with an exciting challenge. "
   ],
   [
-    "Hackstreet",
+    "Hackstreet 4.0",
     "April 4 · 24 hour",
     "The ultimate 24 hour hackathon open to colleges across the nation."
   ],

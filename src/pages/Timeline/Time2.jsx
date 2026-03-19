@@ -45,52 +45,37 @@ const Time2 = () => {
       {[
   [
     "Opening Ceremony",
-    "Feb 1, 2025 · 1:00 PM",
-    "A serene opening marked by traditional motifs, welcoming participants into a space of creativity, respect, and innovation."
+    "April 4 · 1:00 PM",
+    "Welcome to Xenith'26! Join us for an exciting inauguration featuring keynote speakers, event roadmap unveiling and networking opportunities."
+  ],
+  [
+    "Code In The Dark",
+    "April 4 · 3.30 PM - 6:30 PM",
+    "Code without seeing, debug without certainty—welcome to controlled chaos. BlindCoding ignites the stage with an exciting challenge. "
   ],
   [
     "Hackstreet",
-    "Feb 1–2 · 24 Hours",
-    "An intense overnight hackathon where ideas flow endlessly, collaborations spark, and solutions take shape under pressure."
+    "April 4 · 24 hour",
+    "The ultimate 24 hour hackathon open to colleges across the nation."
   ],
   [
-    "Shardrift",
-    "Feb 2 · 10:00 AM",
-    "A high-energy competitive challenge testing logic, speed, and problem-solving precision."
+    "Startup Showdown",
+    "April 5 · 1:00 AM - 4:00 PM",
+    "An innovative Startup Pitch Competition designed for visionaries."
   ],
   [
-    "Cyber Robo Workshop",
-    "Dec 3 · 2:00 PM",
-    "A hands-on robotics session blending hardware, code, and futuristic engineering concepts."
+    "RTL Forge",
+    "April 5 · 1:30 PM - 4 PM",
+    "Step into the forge where raw logic is shaped into powerful digital designs. Craft your code with precision and purpose."
   ],
   [
-    "Tech Hunt",
-    "Dec 3 · Night",
+    "Sekiro Saga (Treasure hunt)",
+    "April 5 · 10:00 AM - 2:00 PM",
     "A campus-wide interactive hunt combining cryptic clues, teamwork, and rapid decision-making."
   ],
   [
-    "Idea Station",
-    "Dec 4 · Morning",
-    "An open stage for innovators to pitch bold ideas, receive feedback, and refine visions for real-world impact."
-  ],
-  [
-    "Mentor Connect",
-    "Dec 4 · Afternoon",
-    "One-on-one discussions with industry mentors offering guidance, insights, and career inspiration."
-  ],
-  [
-    "Showcase Expo",
-    "Dec 4 · Late Afternoon",
-    "Teams present their completed projects to judges, peers, and guests in a live demonstration space."
-  ],
-  [
-    "Awards & Recognition",
-    "Dec 4 · Evening",
-    "Celebrating excellence, innovation, and perseverance across all tracks and challenges."
-  ],
-  [
     "Closing Ritual",
-    "Dec 4 · Night",
+    "April 5 · 4:00 PM",
     "A reflective closing honoring collaboration, growth, and the journey shared by all participants."
   ]
 ]

@@ -27,6 +27,7 @@
     "react-router-dom": "^7.12.0",
     "react-scroll-parallax": "^3.5.0",
     "react-water-wave": "^2.0.1",
+    "swiper": "^12.1.2",
     "three": "^0.160.0"
   },
   "devDependencies": {

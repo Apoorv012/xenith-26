@@ -1,4 +1,7 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:wght@300;400&display=swap");
+@import url("/src/styles/theme.css");
+@import url("/src/styles/animations.css");
+
 *,
 *::before,
 *::after {
@@ -23,6 +26,7 @@ img {
   object-fit: cover;
   display: block;
 }
+
 
 .spotlight-header p {
   font-family: "Cormorant Garamond", serif;
@@ -111,7 +115,7 @@ p {
 
 
 .spotlight-titles h1 {
-  font-family: "Cinzel", serif;
+  font-family: "MyCustomFont", serif;
   font-size: clamp(1.3rem, 3.2vw, 3.2rem);
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -123,7 +127,6 @@ p {
   opacity: 0.25; 
 }
 
-
 .spotlight-images {
   position: absolute;
   top: 0;
@@ -150,7 +153,6 @@ p {
   object-position: center;
 }
 
-
 .spotlight-header {
   position: absolute;
   top: 50%;
@@ -171,6 +173,13 @@ p {
   will-change: transform;
   filter: drop-shadow(0 8px 24px rgba(255, 255, 255, 0.15))
           drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
+}
+.spotlight-titles h1:hover {
+  opacity: 1;  
+  text-shadow:
+    0 0 40px rgba(245, 165, 50, 0.5),    
+    0 4px 24px rgba(80, 20, 0, 0.6),     
+    0 0 60px rgba(245, 165, 50, 0.4);    
 }
 
 @media (max-width: 1024px) {
@@ -221,227 +230,8 @@ p {
     gap: 2rem;
   }
 }
-
-
 
  */
-/* 
-@import url("/src/styles/theme.css");
-@import url("/src/styles/animations.css");
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html,
-body {
-  overflow-x: hidden;
-}
-
-
-
-.spotlight {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background: var(--color-bg-dark);
-}
-
-
-.spotlight-bg-img {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  opacity: 0.5;
-}
-
-.spotlight-bg-img img {
-  filter: blur(5px);
-  transform: scale(1.05);
-}
-
-
-.spotlight-titles-container {
-  position: absolute;
-  top: 0;
-  left: 15vw;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 2;
-  clip-path: polygon(
-    50svh 0px,
-    0px 50%,
-    50svh 100%,
-    100% calc(100% + 100svh),
-    100% -100svh
-  );
-  --before-opacity: 0;
-  --after-opacity: 0;
-}
-
-
-.spotlight-titles-container::before,
-.spotlight-titles-container::after {
-  content: "";
-  position: absolute;
-  width: 100svh;
-  height: 2.5px;
-  background: #fff;
-  pointer-events: none;
-  z-index: 10;
-  transition: opacity var(--transition-base);
-}
-
-.spotlight-titles-container::before {
-  top: 0;
-  left: 0;
-  transform: rotate(-45deg) translate(-7rem);
-  opacity: var(--before-opacity);
-}
-
-.spotlight-titles-container::after {
-  bottom: 0;
-  left: 0;
-  transform: rotate(45deg) translate(-7rem);
-  opacity: var(--after-opacity);
-}
-
-
-.spotlight-titles {
-  position: relative;
-  left: 12%;
-  width: 75%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
-  z-index: 2;
-}
-
-
-.spotlight-titles h1 {
-  font-family: var(--font-display);  
-  font-size: clamp(1.3rem, 3.2vw, 3.2rem);
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-gold-primary);
-  text-shadow: var(--shadow-text-gold);
-  opacity: 0.25;
-  cursor: pointer;
-  transition: var(--transition-base);
-}
-
-.spotlight-titles h1:hover {
-  opacity: 1;
-  text-shadow: var(--shadow-text-gold), 0 0 60px rgba(245, 165, 50, 0.6);
-}
-
-
-.spotlight-images {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  min-width: 300px;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.spotlight-img {
-  position: absolute;
-  width: 200px;
-  height: 150px;
-  opacity: 0;
-  will-change: transform;
-  cursor: pointer;
-  filter: drop-shadow(0 8px 24px rgba(255, 255, 255, 0.15))
-          drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
-}
-
-.spotlight-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.spotlight-header {
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  transform: translateY(-50%);
-  color: #fff;
-  z-index: 3;
-}
-
-.spotlight-header p {
-  font-family: var(--font-body);  
-  font-size: clamp(0.85rem, 2vw, 1.4rem);
-  font-weight: 300;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--color-gold-secondary);
-  text-shadow: 0 2px 12px rgba(80, 20, 0, 0.5);
-}
-
-
-@media (max-width: 1024px) {
-  .spotlight-titles h1 {
-    font-size: 2.4rem;
-    letter-spacing: 0.12em;
-  }
-
-  .spotlight-titles {
-    left: 10%;
-    width: 85%;
-    gap: 3.5rem;
-  }
-
-  .spotlight-header {
-    left: 6%;
-  }
-}
-
-@media (max-width: 768px) {
-  .spotlight-titles h1 {
-    font-size: 1.8rem;
-    letter-spacing: 0.08em;
-  }
-
-  .spotlight-titles {
-    left: 5%;
-    width: 90%;
-    gap: 2.5rem;
-  }
-
-  .spotlight-header {
-    left: 4%;
-  }
-
-  .spotlight-header p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .spotlight-titles h1 {
-    font-size: 1.3rem;
-    letter-spacing: 0.06em;
-  }
-
-  .spotlight-titles {
-    gap: 2rem;
-  }
-} */
-
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:wght@300;400&display=swap");
 @import url("/src/styles/theme.css");
 @import url("/src/styles/animations.css");
@@ -471,24 +261,6 @@ img {
   display: block;
 }
 
-/* h1 {
-  font-family: "Cinzel", serif;
-  font-size: 4rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  line-height: 1.2;
-  text-transform: uppercase;
-} */
-/* Discover header */
-.spotlight-header p {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(0.85rem, 2vw, 1.4rem);
-  font-weight: 300;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: #E8D5B0;
-  text-shadow: 0 2px 12px rgba(80, 20, 0, 0.5);
-}
 p {
   font-size: 1.5rem;
 }
@@ -501,6 +273,7 @@ p {
   height: 100vh;
   overflow: hidden;
   background: #0f0f0f;
+  overscroll-behavior: none;
 }
 
 /* Background image */
@@ -511,7 +284,16 @@ p {
   opacity: 0.5;
 }
 
-/* Titles container — clipped to diamond/chevron shape */
+.spotlight-bg-img img {
+  filter: blur(5px);
+  transform: scale(1.05);
+}
+
+/* =====================================================
+   TITLES CONTAINER
+   Desktop: diamond clip-path + left: 15vw (ORIGINAL)
+   Mobile:  no clip-path, full width, left: 0
+   ===================================================== */
 .spotlight-titles-container {
   position: absolute;
   top: 0;
@@ -520,6 +302,7 @@ p {
   height: 100%;
   overflow: hidden;
   z-index: 2;
+  /* ORIGINAL clip-path — do NOT change this for desktop */
   clip-path: polygon(
     50svh 0px,
     0px 50%,
@@ -527,8 +310,8 @@ p {
     100% calc(100% + 100svh),
     100% -100svh
   );
-  --before-opacity: 0;
-  --after-opacity: 0;
+  --before-opacity: 1;
+  --after-opacity: 1;
 }
 
 /* Diagonal cut lines */
@@ -570,14 +353,7 @@ p {
   z-index: 2;
 }
 
-/* .spotlight-titles h1 {
-  color: #fff;
-  font-size: 3.2rem;
-  letter-spacing: 0.18em;
-  opacity: 0.25;
-  text-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
-} */
- /* Nav titles */
+/* Nav titles */
 .spotlight-titles h1 {
   font-family: "MyCustomFont", serif;
   font-size: clamp(1.3rem, 3.2vw, 3.2rem);
@@ -588,7 +364,16 @@ p {
   text-shadow:
     0 0 40px rgba(245, 165, 50, 0.3),
     0 4px 24px rgba(80, 20, 0, 0.5);
-  opacity: 0.25; 
+  opacity: 0.25;
+}
+
+/* Hover glow */
+.spotlight-titles h1:hover {
+  opacity: 1;
+  text-shadow:
+    0 0 40px rgba(245, 165, 50, 0.5),
+    0 4px 24px rgba(80, 20, 0, 0.6),
+    0 0 60px rgba(245, 165, 50, 0.4);
 }
 
 /* Images container */
@@ -597,9 +382,7 @@ p {
   top: 0;
   left: 0;
   width: 50%;
-  min-width: 300px;
   height: 100%;
-  pointer-events: none;
   z-index: 1;
 }
 
@@ -609,6 +392,8 @@ p {
   height: 150px;
   opacity: 0;
   will-change: transform;
+  filter: drop-shadow(0 8px 24px rgba(255, 255, 255, 0.15))
+          drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
 }
 
 .spotlight-img img {
@@ -627,27 +412,17 @@ p {
   color: #fff;
   z-index: 3;
 }
-.spotlight-bg-img img {
-  filter: blur(5px);
-  transform: scale(1.05);
+
+.spotlight-header p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(0.85rem, 2vw, 1.4rem);
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #E8D5B0;
+  text-shadow: 0 2px 12px rgba(80, 20, 0, 0.5);
 }
-.spotlight-img {
-  position: absolute;
-  width: 200px;
-  height: 150px;
-  opacity: 0;
-  will-change: transform;
-  filter: drop-shadow(0 8px 24px rgba(255, 255, 255, 0.15))
-          drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
-}
-/* Hover glow effect */
-.spotlight-titles h1:hover {
-  opacity: 1;  /* Makes text fully visible */
-  text-shadow:
-    0 0 40px rgba(245, 165, 50, 0.5),    /* Stronger inner glow */
-    0 4px 24px rgba(80, 20, 0, 0.6),     /* Shadow depth */
-    0 0 60px rgba(245, 165, 50, 0.4);    /* Outer halo glow */
-}
+
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 1024px) {
@@ -667,34 +442,51 @@ p {
   }
 }
 
+/* =====================================================
+   MOBILE (≤ 768px)
+   - Remove clip-path so titles fill naturally
+   - Reset left offset so nothing is pushed off screen
+   - Hide white diagonal lines
+   - Hide "Discover" text
+   ===================================================== */
 @media (max-width: 768px) {
-  .spotlight-titles h1 {
-    font-size: 1.8rem;
-    letter-spacing: 0.08em;
+  .spotlight-titles-container {
+    left: 0;
+    clip-path: none;
+  }
+
+  /* Hide the two white diagonal lines */
+  .spotlight-titles-container::before,
+  .spotlight-titles-container::after {
+    display: none;
+  }
+
+  /* Hide "Discover" */
+  .spotlight-header {
+    display: none;
   }
 
   .spotlight-titles {
     left: 5%;
-    width: 90%;
+    width: 55%;
     gap: 2.5rem;
   }
 
-  .spotlight-header {
-    left: 4%;
-  }
-
-  .spotlight-header p {
-    font-size: 1rem;
+  .spotlight-titles h1 {
+    font-size: 1.8rem;
+    letter-spacing: 0.08em;
   }
 }
 
 @media (max-width: 480px) {
-  .spotlight-titles h1 {
-    font-size: 1.3rem;
-    letter-spacing: 0.06em;
+  .spotlight-titles {
+    left: 4%;
+    width: 52%;
+    gap: 2rem;
   }
 
-  .spotlight-titles {
-    gap: 2rem;
+  .spotlight-titles h1 {
+    font-size: clamp(1rem, 5.5vw, 1.5rem);
+    letter-spacing: 0.06em;
   }
 }

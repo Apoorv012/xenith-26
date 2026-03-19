@@ -1,135 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:wght@300;400&display=swap');
-@import url("/src/styles/theme.css");
-@import url("/src/styles/animations.css");
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  height: 100svh; 
-  overflow: hidden;
-}
-
-canvas {
-  display: block;
-
-}
-
-.hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 90%;
-  transform: translate(-50%, -50%);
-}
-
-.header {
-  text-align: center;
-  will-change: opacity;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  opacity: 0;
-}
-
-.hero-title {
-  font-family: "MyCustomFont", serif;
-  font-size: clamp(2.2rem, 6vw, 6rem);
-  font-weight: 900;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #F5C87A;
-  text-shadow:
-    0 0 40px rgba(245, 165, 50, 0.4),
-    0 4px 24px rgba(80, 20, 0, 0.6);
-  line-height: 1.05;
-}
-
-.hero-subtitle {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(0.85rem, 2vw, 1.4rem);
-  font-weight: 300;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: #E8D5B0;
-  text-shadow: 0 2px 12px rgba(80, 20, 0, 0.5);
-}
-
-.header::after {
-  content: "⸻";
-  color: #C8860A;
-  font-size: 1rem;
-  opacity: 0.7;
-  order: 1; 
-}
-
-.hero-subtitle {
-  order: 2;
-}
-.hero-title {
-  font-family: "MyCustomFont", serif;
-  font-size: clamp(2.2rem, 6vw, 6rem);
-  font-weight: 900;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #F5C87A;
-  line-height: 1.05;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.05em;
-}
-
-.char-glow {
-  display: inline-block;
-  animation: shadowGlow 3s ease-in-out infinite;
-  text-shadow: 0 0 40px rgba(245, 165, 50, 0.4), 0 4px 24px rgba(80, 20, 0, 0.6);
-}
-
-@keyframes shadowGlow {
-  0%, 100% {
-    text-shadow: 0 0 20px rgba(245, 165, 50, 0.2), 0 2px 12px rgba(80, 20, 0, 0.4);
-  }
-  50% {
-    text-shadow: 0 0 60px rgba(245, 165, 50, 0.6), 0 0 40px rgba(245, 100, 30, 0.4), 0 4px 24px rgba(80, 20, 0, 0.8);
-    color: #e5d8d8;
-  }
-}
-.hero-title {
-  font-family: "MyCustomFont", serif;
-  font-size: clamp(2.2rem, 6vw, 6rem);
-  font-weight: 900;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #F5C87A;
-  line-height: 1.05;
-  animation: shadowRise 2s ease-out 0.2s both;
-  text-shadow: 0 0 40px rgba(245, 165, 50, 0.4), 0 4px 24px rgba(80, 20, 0, 0.6);
-  filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.8));
-}
-
-@keyframes shadowRise {
-  0% {
-    opacity: 0;
-    transform: translateY(60px) scale(0.8);
-    filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 1));
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.8));
-  }
-} */
-
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:wght@300;400&display=swap');
 @import url("/src/styles/theme.css");
 @import url("/src/styles/animations.css");
@@ -142,11 +10,18 @@ canvas {
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'HiXiaobo';
+  src: url('../../assets1/Hi Xiaobo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .hero {
   position: relative;
   width: 100%;
   height: 100vh;
-  height: 100svh; 
+  height: 100svh;
   overflow: hidden;
 }
 
@@ -168,171 +43,107 @@ canvas {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.8rem;
   opacity: 0;
 }
 
+.header::after {
+  content: "⸻";
+  color: #C8860A;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  order: 1;
+  animation: dividerReveal 1s ease-out 0.4s both;
+}
+
 /* ========================================
-   EPIC COMBINED EFFECT
-   Combines: Shadow Rise + Character Glow + Fire Effect
+   XENITH'26
+   ======================================== */
+
+.hero-event-name {
+  font-family: "MyCustomFont", serif;
+  font-size: clamp(1.8rem, 4vw, 4rem);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: #FFE08A;
+  text-shadow:
+    2px 2px 0px rgba(0,0,0,0.9),
+    -1px -1px 0px rgba(0,0,0,0.9),
+    0 0 30px rgba(0,0,0,0.8),
+    0 0 20px rgba(255, 220, 100, 0.5);
+  animation: epicTitleRise 1.2s ease-out 0.05s both;
+  order: -1;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* ========================================
+   SHADOWS OF SAMURAI
    ======================================== */
 
 .hero-title {
   font-family: "MyCustomFont", serif;
-  font-size: clamp(2.2rem, 6vw, 6rem);
+font-size: clamp(2.2rem, 5.5vw, 5.5rem);
   font-weight: 900;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  line-height: 1.05;
-  
-  /* Display settings for individual chars */
+  line-height: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.02em;
-  
-  /* Main glow animation - shadow rise effect */
-  animation: epicTitleRise 2.2s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
-  
-  /* Combined filter effects */
-  filter: 
-    drop-shadow(0 20px 60px rgba(0, 0, 0, 0.9))
-    drop-shadow(0 0 40px rgba(245, 165, 50, 0.5));
+  animation: epicTitleRise 1.2s ease-out 0.1s both;
+  will-change: opacity, transform;
 }
 
-/* Individual character glow effect */
 .char-glow {
   display: inline-block;
-  background: linear-gradient(135deg, #FFD700, #F5C87A, #E8B45E, #F5C87A, #FFD700);
-  background-size: 300% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  
-  /* Character-specific animations */
-  animation: 
-    charFireGlow 3.5s ease-in-out infinite,
-    charPulse 2.5s ease-in-out infinite,
-    charFlicker 0.12s infinite;
-  
-  filter: 
-    drop-shadow(0 0 25px rgba(245, 165, 50, 0.5))
-    drop-shadow(0 0 40px rgba(232, 180, 94, 0.3));
-  
-  /* Ensure proper text rendering */
-  will-change: filter, text-shadow;
+  color: #E8850A;
   font-weight: 900;
+  animation: charPulseLight 2.5s ease-in-out infinite;
+  text-shadow:
+    2px 2px 0px rgba(0,0,0,0.95),
+    -1px -1px 0px rgba(0,0,0,0.9),
+    0 0 40px rgba(0,0,0,0.8),
+    0 0 25px rgba(232, 133, 10, 0.5),
+    0 0 50px rgba(232, 133, 10, 0.2);
+  will-change: opacity;
 }
 
 /* ========================================
-   ANIMATION 1: Shadow Rise (Initial Entrance)
+   TAGLINE
+   ======================================== */
+
+.hero-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.7rem, 1.3vw, 0.95rem);
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #c8a870;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.8);
+  animation: subtitleFadeIn 1.2s ease-out 0.6s both;
+  order: 3;
+}
+
+/* ========================================
+   ANIMATIONS
    ======================================== */
 
 @keyframes epicTitleRise {
   0% {
     opacity: 0;
-    transform: translateY(80px) scale(0.7);
-    filter: 
-      drop-shadow(0 60px 120px rgba(0, 0, 0, 1))
-      drop-shadow(0 0 20px rgba(245, 165, 50, 0.1));
+    transform: translateY(40px);
   }
-  
-  50% {
-    filter: 
-      drop-shadow(0 40px 80px rgba(0, 0, 0, 0.95))
-      drop-shadow(0 0 50px rgba(245, 165, 50, 0.4));
-  }
-  
   100% {
     opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: 
-      drop-shadow(0 20px 60px rgba(0, 0, 0, 0.9))
-      drop-shadow(0 0 40px rgba(245, 165, 50, 0.5));
+    transform: translateY(0);
   }
 }
 
-/* ========================================
-   ANIMATION 2: Fire Glow (Continuous Color Shift)
-   ======================================== */
-
-@keyframes charFireGlow {
-  0%, 100% {
-    background-position: 0% center;
-    filter: 
-      drop-shadow(0 0 20px rgba(245, 165, 50, 0.4))
-      drop-shadow(0 0 40px rgba(232, 180, 94, 0.2));
-  }
-  
-  25% {
-    background-position: 33% center;
-    filter: 
-      drop-shadow(0 0 35px rgba(245, 165, 50, 0.6))
-      drop-shadow(0 0 60px rgba(232, 180, 94, 0.3));
-  }
-  
-  50% {
-    background-position: 66% center;
-    filter: 
-      drop-shadow(0 0 50px rgba(245, 165, 50, 0.7))
-      drop-shadow(0 0 80px rgba(232, 180, 94, 0.4));
-  }
-  
-  75% {
-    background-position: 100% center;
-    filter: 
-      drop-shadow(0 0 40px rgba(245, 165, 50, 0.5))
-      drop-shadow(0 0 70px rgba(232, 180, 94, 0.3));
-  }
-}
-
-/* ========================================
-   ANIMATION 3: Character Pulse (Glow Intensity)
-   ======================================== */
-
-@keyframes charPulse {
-  0%, 100% {
-    opacity: 1;
-    text-shadow: 
-      0 0 30px rgba(245, 165, 50, 0.3),
-      0 0 60px rgba(255, 107, 53, 0.1);
-  }
-  
-  50% {
-    opacity: 0.95;
-    text-shadow: 
-      0 0 50px rgba(245, 165, 50, 0.6),
-      0 0 90px rgba(255, 107, 53, 0.4);
-  }
-}
-
-/* ========================================
-   ANIMATION 4: Flicker (Subtle Fire Effect)
-   ======================================== */
-
-@keyframes charFlicker {
-  0%, 100% { 
-    opacity: 1;
-  }
-  50% { 
-    opacity: 0.97;
-  }
-}
-
-/* ========================================
-   SUBTITLE
-   ======================================== */
-
-.hero-subtitle {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(0.85rem, 2vw, 1.4rem);
-  font-weight: 300;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: #E8D5B0;
-  text-shadow: 0 2px 12px rgba(80, 20, 0, 0.5);
-  animation: subtitleFadeIn 1.8s ease-out 0.5s both;
-  order: 2;
+@keyframes charPulseLight {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
 }
 
 @keyframes subtitleFadeIn {
@@ -346,22 +157,13 @@ canvas {
   }
 }
 
-.header::after {
-  content: "⸻";
-  color: #C8860A;
-  font-size: 1rem;
-  opacity: 0.7;
-  order: 1;
-  animation: dividerReveal 1.6s ease-out 0.4s both;
-}
-
 @keyframes dividerReveal {
   from {
     opacity: 0;
     transform: scaleX(0);
   }
   to {
-    opacity: 0.7;
+    opacity: 0.8;
     transform: scaleX(1);
   }
 }
@@ -374,15 +176,75 @@ canvas {
   .hero-title {
     gap: 0.01em;
   }
-  
   .char-glow {
-    animation-duration: 3s, 2s, 0.1s;
+    animation-duration: 2s;
+  }
+  .hero-event-name {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    letter-spacing: 0.12em;
+  }
+  .hero-tagline {
+    font-size: clamp(0.45rem, 2.2vw, 0.65rem);
+    letter-spacing: 0.3em;
   }
 }
 
 @media (max-width: 480px) {
   .hero-title {
-    letter-spacing: 0.06em;
+    letter-spacing: 0em;
     gap: 0em;
+  }
+  .hero-event-name {
+    font-size: clamp(1.2rem, 7vw, 2rem);
+  }
+}
+.hero-event-apostrophe {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+}
+/* ===== MUSIC TOGGLE BUTTON ===== */
+
+.music-toggle {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9998;
+  
+  background: transparent;
+  border: none;
+  
+  font-size: 1.8rem;
+  cursor: pointer;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.music-toggle:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 15px rgba(232, 133, 10, 0.4));
+}
+
+.music-toggle:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .music-toggle {
+    bottom: 1.2rem;
+    right: 1.2rem;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .music-toggle {
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 1.4rem;
   }
 }

@@ -609,9 +609,12 @@
 //   );
 // }
 import { useEffect, useRef, useState, useCallback } from "react";
+import Swiper from 'swiper';
+import { EffectCoverflow } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
 
 const members = [
-  { name: "Dr Abhay Kumar",     role: "Branch Counsellor",     img: "images-oc/Dr.AbhayKumar.webp" },
   { name: "Manayav Vatsal",     role: "Chairperson",           img: "images-oc/ManayavVatsal.webp" },
   { name: "Anoushka Kaushik",   role: "Vice Chairperson",      img: "images-oc/AnoushkaKaushik.webp" },
   { name: "Mohd Aayaan",        role: "Organising Secretary",  img: "images-oc/MohdAayaan.webp" },
@@ -788,40 +791,38 @@ export default function OrganisingCommittee() {
     return () => window.removeEventListener("wheel", onWheel);
   }, []);
 
-  useEffect(() => {
-    const init = async () => {
-      if (!document.querySelector("#swiper-css")) {
-        const link = document.createElement("link");
-        link.id = "swiper-css"; link.rel = "stylesheet";
-        link.href = "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css";
-        document.head.appendChild(link);
-      }
-      if (!window.Swiper) {
-        await new Promise(res => {
-          const s = document.createElement("script");
-          s.src = "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
-          s.onload = res; document.head.appendChild(s);
-        });
-      }
-      if (swiperRef.current && !swiperInstance.current) {
-        swiperInstance.current = new window.Swiper(swiperRef.current, {
-          effect: "coverflow",
-          grabCursor: false,
-          allowTouchMove: false,
-          centeredSlides: true,
-          slidesPerView: "auto",
-          spaceBetween: 24,
-          coverflowEffect: { rotate: 30, stretch: 0, depth: 200, modifier: 1, slideShadows: true },
-          loop: true,
-          speed: 700,
-          on: { slideChange(s) { setActiveIdx(s.realIndex); } },
-        });
-      }
-    };
-    init();
-    return () => { swiperInstance.current?.destroy(true, true); swiperInstance.current = null; };
-  }, []);
+useEffect(() => {
+  const outerEl = swiperRef.current?.parentElement;
+  if (outerEl) outerEl.style.opacity = "0";
 
+  if (swiperRef.current && !swiperInstance.current) {
+    swiperInstance.current = new Swiper(swiperRef.current, {
+      modules: [EffectCoverflow],
+      effect: "coverflow",
+      grabCursor: false,
+      allowTouchMove: false,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      spaceBetween: 24,
+      coverflowEffect: { rotate: 30, stretch: 0, depth: 200, modifier: 1, slideShadows: true },
+      loop: true,
+      speed: 700,
+      on: { slideChange(s) { setActiveIdx(s.realIndex); } },
+    });
+
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      if (outerEl) {
+        outerEl.style.transition = "opacity 0.5s ease";
+        outerEl.style.opacity = "1";
+      }
+    }));
+  }
+
+  return () => {
+    swiperInstance.current?.destroy(true, true);
+    swiperInstance.current = null;
+  };
+}, []);
   return (
     <>
       <style>{`

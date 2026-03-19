@@ -2,8 +2,8 @@ const events=[
 
 {
 id:1,
-name:"StartUp Showdown",
-poster:"/posters/startup.png",
+name:"ComingSoon",
+poster:"/posters/ComingSoon.png",
 link:"#"
 },
 

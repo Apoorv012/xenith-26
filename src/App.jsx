@@ -144,6 +144,7 @@
 import { Canvas } from "@react-three/fiber";
 import { useEffect, useState } from "react";
 import { RouterProvider } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import Scene from "./canvas/Scene";
 import router from "./router";
 
@@ -178,6 +179,7 @@ export default function App() {
   return (
     <>
       <RouterProvider router={router} />
+      <Analytics />
 
       {/* Always in the DOM. After fadeOut: invisible + non-interactive. */}
       <div style={{

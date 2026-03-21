@@ -71,7 +71,15 @@ export default function Hero() {
       img.src = getFrameSrc(i);
       img.onload = img.onerror = () => {
         remaining--;
-        if (remaining === 0) setLoaded(true);
+        // if (remaining === 0) setLoaded(true);
+        if (remaining === 0) {
+  setLoaded(true);
+
+  requestAnimationFrame(() => {
+    videoFrameRef.current.frame = 0;
+    render();
+  });
+}
       };
       imagesRef.current[i] = img;
     }

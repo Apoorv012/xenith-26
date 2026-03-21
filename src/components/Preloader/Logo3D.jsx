@@ -34,7 +34,6 @@ export default function Logo3D({ isMobile }) {
         map={texture}
         transparent
         opacity={0}
-        color="#000000"
         toneMapped={false}
       />
     </mesh>

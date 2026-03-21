@@ -49,7 +49,8 @@ export default function TimelinePage() {
   imageUrl={koibg2}
   dropRadius={10}       
         perturbance={0.005}   
-        resolution={256}      
+        resolution={256}   
+        interactive={true}   
       >
         {(methods) => (
           <div className="timeline-page" style={{ position: 'relative' }}>

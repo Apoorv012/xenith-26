@@ -166,3 +166,47 @@ background:rgba(255,255,255,0.25);
 transform:scale(1.05);
 box-shadow:0 15px 50px rgba(255,255,255,0.2);
 }
+
+@media (max-width: 768px) {
+  .eventsCenter {
+    padding-left: 0;
+    padding-bottom: 60px;
+    justify-content: center;  /* center the cube on mobile */
+    align-items: flex-end;
+  }
+
+  .cubeContainer {
+    width: 220px;
+    height: 220px;
+  }
+
+  .cube {
+    width: 220px;
+    height: 220px;
+  }
+
+  .face {
+    width: 220px;
+    height: 220px;
+  }
+
+  .face0 { transform: rotateY(0deg)    translateZ(110px); }
+  .face1 { transform: rotateY(90deg)   translateZ(110px); }
+  .face2 { transform: rotateY(180deg)  translateZ(110px); }
+  .face3 { transform: rotateY(-90deg)  translateZ(110px); }
+  .face4 { transform: rotateX(90deg)   translateZ(110px); }
+  .face5 { transform: rotateX(-90deg)  translateZ(110px); }
+}
+
+@media (max-width: 768px) {
+  .registerBtn {
+    padding: 8px 20px;      /* smaller padding */
+    font-size: 11px;         /* smaller text */
+    letter-spacing: 0.5px;
+    bottom: 16px;            /* move up a bit */
+  }
+
+  .centerButton {
+    bottom: 16px;
+  }
+}

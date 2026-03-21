@@ -51,8 +51,11 @@ export default function Hero() {
     const img = imagesRef.current[videoFrameRef.current.frame];
     if (!img?.complete || !img.naturalWidth) return;
 
-    const w = window.innerWidth;
-    const h = window.innerHeight;
+    // const w = window.innerWidth;
+    // const h = window.innerHeight;
+    // Use canvas's actual CSS dimensions, not window.innerHeight
+  const w = canvas.clientWidth;
+  const h = canvas.clientHeight;
     const scale = Math.max(w / img.naturalWidth, h / img.naturalHeight);
     const dw = img.naturalWidth * scale;
     const dh = img.naturalHeight * scale;

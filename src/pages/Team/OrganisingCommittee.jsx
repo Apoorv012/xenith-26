@@ -11,7 +11,7 @@ const members = [
   { name: "Daksha Pandey",      role: "Treasurer",             img: "images-oc/DakshaPandey.webp" },
   { name: "Apoorva Soni",       role: "WIE Head",              img: "images-oc/ApoorvaSoni.webp" },
   { name: "Medhavi Khandelwal", role: "Strategic Head",        img: "images-oc/MedhaviKhandelwal.webp" },
-  { name: "Ishi Bharadwaj",     role: "Logistics Head",        img: "images-oc/IshiBharadwaj.webp" },
+  { name: "Ishi Bhardwaj",     role: "Logistics Head",        img: "images-oc/IshiBharadwaj.webp" },
   { name: "Apoorv Mittal",      role: "Tech CSE Head",         img: "images-oc/ApoorvMittal.webp" },
   { name: "Prakhar Sharma",     role: "Tech ECE Head",         img: "images-oc/PrakharSharma.webp" },
   { name: "Daksh Sachdeva",     role: "Digital Head",          img: "images-oc/DakshSachdeva.webp" },

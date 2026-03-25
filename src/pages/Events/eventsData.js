@@ -9,9 +9,9 @@ link:"#"
 
 {
 id:2,
-name:"Sekiro Saga",
-poster:"/posters/sekiro.png",
-link:"#"
+name:"hackstreet",
+poster:"/posters/hackstreet.png",
+link:"https://www.hackstreet26.xyz/"
 },
 
 {
@@ -37,8 +37,8 @@ link:"#"
 
 {
 id:5,
-name:"hackstreet",
-poster:"/posters/hackstreet.png",
+name:"Sekiro Saga",
+poster:"/posters/sekiro.png",
 link:"#"
 },
 

@@ -23,7 +23,7 @@ export default function App() {
   }, []);
 
   const dismiss = () => {
-    router.navigate("/", { replace: true });
+    // router.navigate("/", { replace: true });
     setFadeOut(true);
     // Canvas stays mounted permanently — unmounting it causes a React/R3F
     // "removeChild" crash because R3F manages its own DOM nodes internally.

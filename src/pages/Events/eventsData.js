@@ -21,18 +21,25 @@ poster:"/posters/code.png",
 link:"#"
 },
 
-{
-id:4,
-name:"Speaker ",
-type:"speaker",  
-poster:"/posters/speaker.png",
-posters:[
-  "/posters/speaker1.png",
-  "/posters/speaker2.png",
-  "/posters/speaker3.png"
-],
-link:"#"
+// {
+// id:4,
+// name:"Speaker ",
+// type:"speaker",  
+// poster:"/posters/speaker.png",
+// posters:[
+//   "/posters/speaker1.png",
+//   "/posters/speaker2.png",
+//   "/posters/speaker3.png"
+// ],
+// link:"#"
 
+// },
+
+{
+id:5,
+name:"startup",
+poster:"/posters/startup.png",
+link:"#"
 },
 
 {

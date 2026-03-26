@@ -18,7 +18,7 @@ link:"https://www.hackstreet26.xyz/"
 id:3,
 name:"Code in the Dark",
 poster:"/posters/code.png",
-link:"#"
+link:"https://forms.gle/sF9MMmCJxNNQwrvA7"
 },
 
 // {
@@ -46,14 +46,14 @@ link:"#"
 id:5,
 name:"Sekiro Saga",
 poster:"/posters/sekiro.png",
-link:"#"
+link:"https://forms.gle/8cmQbDQ7eqQ5YzcaA"
 },
 
 {
 id:6,
 name:"RTL Forge",
 poster:"/posters/RTL.png",
-link:"#"
+link:"https://forms.gle/5rmwLWq1gnGfkDxZA"
 }
 
 ];

@@ -36,7 +36,7 @@ link:"https://forms.gle/sF9MMmCJxNNQwrvA7"
 // },
 
 {
-id:5,
+id:4,
 name:"startup",
 poster:"/posters/startup.png",
 link:"https://unstop.com/p/startup-showdown-xenith26-ieee-student-branch-jiit-noida-1665068?utm_campaign=site-emails&utm_medium=d2c-automated&utm_source=congratulations-your-listing-for-startup-showdown-xenith26-is-completehttps://unstop.com/p/startup-showdown-xenith26-ieee-student-branch-jiit-noida-1665068?utm_campaign=site-emails&utm_medium=d2c-automated&utm_source=congratulations-your-listing-for-startup-showdown-xenith26-is-complete"
